@@ -2,12 +2,18 @@
 
 {% block title %}Bienvenue !{% endblock %}
 
+{% block stylesheets %}
+
+<link rel="stylesheet" href="{{ asset('/css/introjs.css') }}"/>
+
+{% endblock %}
+
 {% block body %}
 
 	<div class="ml-5 mt-2 mb-5">
 
 		<div class="row">
-			<div class="col-md-3 filter">
+			<div class="col-md-3 filter intro-step13">
 				{% include 'main/_filter.html.twig' with {form: form} only %}
 			</div>
 
@@ -20,7 +26,7 @@
 					            {% endif %}
 					            ">
 
-				<h1 class="text-center my-2 filActu alert alert-primary">
+				<h1 class="text-center my-2 filActu alert alert-primary intro-step14">
 					<b>FIL DE RESSOURCES</b> 
 				</h1>
 				{% if is_granted('ROLE_EDITOR') %}
@@ -35,7 +41,7 @@
 					<hr class="mb-4">
 					{% if articles.comments | length > 0 %}
 
-						<div class="float-right mr-2 btn btn-success">
+						<div class="float-right mr-2 btn btn-success intro-step16">
 							{% include 'template_parts/_rating.html.twig' with {'rating' : articles.AvgRatings} %}
 							<br>
 						</div>
@@ -44,7 +50,7 @@
 						{# {% if app.user %} #}
 
 							{# <a href="{{ path('main_show', {'id' : articles.id}) }}" class="btn btn-success btn-lg float-right ml-2 mr-2" style="color:yellow; text-shadow: 4px 6px 8px black;"> #}
-								<h4 class="btn btn-success btn-lg float-right ml-2 mr-2" style="color:yellow; text-shadow: 4px 6px 8px black;">
+								<h4 class="btn btn-success btn-lg float-right ml-2 mr-2 intro-step4" style="color:yellow; text-shadow: 4px 6px 8px black;">
 									<b>Pas encore commenté !</b>
 								</h4>
 							{# </a>
@@ -53,7 +59,7 @@
 					{% endif %}
 
 
-					<h2>
+					<h2 class="intro-step15">
 						<b>{{ articles.title }}</b>
 					</h2>
 					<h4 class="metadata mt-3">
@@ -76,12 +82,12 @@
 						{% else %}
 
 					{% endif %}
-					<h4 class="metadata mt-3">
+					<h4 class="metadata mt-3 intro-step17">
 						<i>Catégorie :
 							<h2 class="{{ articles.category.color }} text-light" style="font-size: 1em;">{{ articles.category.title }}</h2>
 						</i>
 					</h4>
-					<h4 class="metadata">
+					<h4 class="metadata intro-step18">
 						<i>Contenu affiché :
 							<h2 class="badge badge-success text-light" style="font-size: 1em;">{{ ((2000*100) / (articles.content | length)) | number_format(0, '.', ',') }} %</h2>
 						</i>
@@ -93,7 +99,7 @@
 						{% if app.user %}
 							<p style="color: blue; font-size: 1.2em">Il vous reste
 								<b>{{ (100 - ((2000*100) / (articles.content | length))) | number_format(0, '.', ',') }} %</b> de cet article à lire ...</p>
-							<a href="{{ path('main_show', {'id' : articles.id}) }})" class="btn btn-primary" style="font-size: 1.4em;">
+							<a href="{{ path('main_show', {'id' : articles.id}) }})" class="btn btn-primary intro-step19" style="font-size: 1.4em;">
 								<i class="fas fa-eye"></i>
 								<b>
 									Lire la suite</b>
@@ -101,7 +107,7 @@
 						{% else %}
 							<p style="color: red; font-size: 1.2em">Il vous reste
 								<b>{{ (100 - ((2000*100) / (articles.content | length))) | number_format(0, '.', ',') }} %</b> de cet article à lire ...</p>
-							<a href="{{path('security_login')}}" class="btn btn-primary" style="font-size: 1.4em;">
+							<a href="{{path('security_login')}}" class="btn btn-primary intro-step19" style="font-size: 1.4em;">
 								<b>
 									Lire la suite !</b>
 							</a>
@@ -134,5 +140,12 @@
 		</div>
    
  </div>
+
+ {% block javascripts %}
+
+<script src="{{ asset('/js/introA.min.js') }}"></script>
+<script src="{{ asset('/js/intro-consulter.js') }}"></script>
+
+{% endblock %}
 
 	{% endblock %}

@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-dark
+  <nav class="navbar navbar-expand-lg navbar-dark intro-step1
 
          {% if app.user %}
         {{ app.user.navColor }} 
@@ -9,7 +9,7 @@
         sticky-top" id="navMenuMobile">
 			{# <a class="navbar-brand pull-right-top" href="#"><i class="fa fa-cogs" aria-hidden="true"></i> #}
             {# <div class="pull-left-top"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></div> #}
-            <a class="navbar-brand" href="{{ path('home', {'id': 1}) }}" id="aide1"><img src="https://i.ibb.co/PsLNgMd/Minist-re-des-solidarit-s-et-de-la-sant-2.png" alt="logo Blog" class="img-fluid" style="width:120px; height=120px;"></a>
+            <a class="navbar-brand" href="{{ path('home', {'id': 1}) }}" id="aide1"><img src="https://i.ibb.co/PsLNgMd/Minist-re-des-solidarit-s-et-de-la-sant-2.png" alt="logo Blog" class="img-fluid intro-step2" style="width:120px; height=120px;"></a>
             {# <button style="font-size: 2rem; background-color: white;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" style="font-size: 2rem; background-color: black;"></span>
             </button> #}
@@ -25,7 +25,7 @@
                         <a style="color:white; font-size: 1.8rem" class="nav-link ml-3" href="{{path('main')}}">A Propos</a>
                     </li> #}
                     <li class="nav-item">
-                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3" href="{{path('main')}}">CONSULTER</a>
+                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3 intro-step3" href="{{path('main')}}">CONSULTER</a>
                     </li>
 
 {# navbar-item li a:hover {
@@ -37,7 +37,7 @@
                 {# {% if app.user %} #}
                         
                     <li class="nav-item dropdown">                                              
-                        <a href="#" id="accountDropdownLink" class="nav-link dropdown-toggle ml-3" data-toggle="dropdown" style="color: white; font-size: 1.8rem">
+                        <a href="#" id="accountDropdownLink" class="nav-link dropdown-toggle ml-3 intro-step4" data-toggle="dropdown" style="color: white; font-size: 1.8rem">
                            PUBLIER
                             {# <img src="{{app.user.avatar}}" style="max-width:55px;" class="rounded-circle"> {{app.user.username}}  #}
                         </a>
@@ -103,10 +103,10 @@
                     </li> #}
                     
                     <li class="nav-item">
-                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3" href="{{path('event_index')}}">EVENEMENTS</a>
+                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3 intro-step5" href="{{path('event_index')}}">EVENEMENTS</a>
                     </li>
                     <li class="nav-item">
-                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3" href="{{path('contact')}}">NOUS CONTACTER</a>
+                        <a style="color:white; font-size: 1.8rem" class="nav-link ml-3 intro-step6" href="{{path('contact')}}">NOUS CONTACTER</a>
                     </li>
                     {# <li class="nav-item">
                         <a class="nav-link text-dark " href="#!" id="step-5">
@@ -187,7 +187,7 @@
                     </li> #}
                     <li class="nav-item">
                         {# <a href="{{path('security_login')}}" class="nav-link" style="color:white; font-size: 1.8rem;"> Connexion</a> #}
-                        <a href="{{path('security_login')}}" class="nav-link" style="color: yellow; font-size: 1.8rem;"> Connexion</a>
+                        <a href="{{path('security_login')}}" class="nav-link intro-step7" style="color: yellow; font-size: 1.8rem;"> Connexion</a>
                     </li>
                 {% endif %}
                 </ul>

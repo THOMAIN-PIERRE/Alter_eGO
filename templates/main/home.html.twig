@@ -16,13 +16,13 @@
 			{% endif %}
 			">
 
-		<div class="container jumbotron bg-primary text-light mt-4">
+		<div class="container jumbotron bg-primary text-light mt-4 intro-step8">
 			<h1 class="display-3">
 				<font style="vertical-align: inherit;">
 					<font style="vertical-align: inherit;">
 						Bienvenue sur <img src="https://i.ibb.co/WWx6g3z/Logo-Alter-e-GO.png" width="350px" height="100px" alt="Logo Alter eGO arc en ciel"/>
 					</font>
-					<a class="nav-link text-dark " href="#!" id="step-5">
+					<a class="nav-link text-dark " href="#!">
                         {# <button type="button" style="border: none; background-color: white;" id="aidePageAccueil"><i class="fas fa-question-circle fa-2x"></i></button> #}
                     </a>
 				</font>
@@ -42,13 +42,14 @@
 					<font style="vertical-align: inherit;">
 						<font style="vertical-align: inherit;">
 							Haec igitur prima lex amicitiae sanciatur, ut ab amicis honesta petamus, amicorum causa honesta faciamus, ne exspectemus quidem.
+							Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis subito visus.
 						</font>
 					</font>
 				</p>
 			</p>
 		</h4>
 		<p class="lead">
-			<a class="btn btn-success btn-lg mt-2 p-3 middle intro-step1" href="{{ path('main' )}}" role="button">
+			<a class="btn btn-success btn-lg mt-2 p-3 middle" href="{{ path('main' )}}" role="button">
 				<font style="vertical-align: inherit;">
 					<font style="vertical-align: inherit;">
 						<i class="fas fa-eye"></i>
@@ -120,7 +121,9 @@
 </div>
 </div> #}
 
-	<h1 class="container text-center mt-5 mb-5 bg-primary p-2 rounded-pill intro-step2" style="color:yellow; text-shadow: 4px 6px 8px black;"><b>LES RESSOURCES LES MIEUX NOTES</b></h1>
+	<h1 class="container text-center mt-5 mb-5 bg-primary p-4 rounded-pill intro-step9" style="color:yellow; text-shadow: 4px 6px 8px black;"><b><img src="https://i.ibb.co/QFp29wt/Robert.png" alt="Alty" width="100px" height="100px"/> <i>LES CONSEILS D'ALTY</i></b></h1>
+
+	<h1 class="container text-center mt-5 mb-5 bg-primary p-2 rounded-pill intro-step10" style="color:yellow; text-shadow: 4px 6px 8px black;"><b>LES RESSOURCES DE NOS <i>ALTERS</i> LES MIEUX NOTES</b></h1>
 
   <article class="container">
 		<div class="row alert alert-info mt-4 ">
@@ -182,7 +185,7 @@
 	{% endfor %}
   </article>
 
-  <h1 class="container text-center mt-5 mb-5 bg-primary p-2 rounded-pill intro-step3" style="color:yellow; text-shadow: 4px 6px 8px black;"><b>LES RESSOURCES LES PLUS COMMENTES</b></h1>
+  <h1 class="container text-center mt-5 mb-5 bg-primary p-2 rounded-pill intro-step11" style="color:yellow; text-shadow: 4px 6px 8px black;"><b>LES RESSOURCES DE NOS <i>ALTERS</i> LES PLUS COMMENTES</b></h1>
 
   <article class="container">
 		<div class="row alert alert-info mt-4 ">
@@ -230,7 +233,7 @@
 	{% endfor %}
   </article>
 
-		<div class="container mt-5 mb-5 intro-step4">
+		<div class="container mt-5 mb-5 intro-step12">
 			<div
 				id="demo" class="carousel slide" data-ride="carousel">
 				<!-- Indicateurs -->
@@ -288,8 +291,8 @@
 
 {% block javascripts %}
 
-<script src="{{ asset('/js/intro.min.js') }}"></script>
-<script src="{{ asset('/js/intro.js') }}"></script>
+<script src="{{ asset('/js/introA.min.js') }}"></script>
+<script src="{{ asset('/js/intro-home.js') }}"></script>
 
 {% endblock %}
 

@@ -13,7 +13,7 @@
         {# Link to be able to implement font-awesome in our app #}
         
         {# IntroJS #}
-        {# <link rel="stylesheet" href="{{ asset('/css/introjs.css') }}"/> #}
+        <link rel="stylesheet" href="{{ asset('/css/introjs.css') }}"/>
 
 
         <Link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity =" sha256- + N4/V/SbAFiW1MPBCXnfnP9QSN3 + Keu+NlB+0ev/YKQ="crossorigin = "anonyme"/>
@@ -24,6 +24,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
        
+        {# <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js" integrity="sha512-u8KX8882NoHu0go0Lh2OVdOOeGgRz7rMIViN87XkI/5QfttoShU88qFda6HBlUJfcSEZopuj4stj6r7FNp4MVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> #}
  
         {% block stylesheets %}
             <style>
@@ -89,9 +90,14 @@
 
         {# Intro.JS #}
         {# <script src="{{ asset('/js/intro.min.js') }}"></script>
-        <script src="{{ asset('/js/intro.js') }}"></script> #}
+        <script src="{{ asset('/js/intro2.js') }}"></script> #}
+       
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        
+
+        
+        {% endblock %}
 
     </body>
 </html>

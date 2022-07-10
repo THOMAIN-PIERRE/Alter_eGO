@@ -270,7 +270,10 @@
     /* background-color: rgb(9, 179, 9); */
     border-radius: 0.2em;
     zoom: 1;
-    *display: inline; }
+    *display: inline; 
+    content: "avant";
+  
+  }
     .introjs-button:hover {
       outline: none;
       text-decoration: none;
@@ -331,7 +334,7 @@
       text-decoration: none; }
   
   .introjs-prevbutton {
-    float: left; 
+    float: left;
 }
   
   .introjs-nextbutton {
