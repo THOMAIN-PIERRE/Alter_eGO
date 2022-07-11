@@ -38,7 +38,7 @@ class InformationsController extends AbstractController
 
 
     /**
-     * Adisplay "politique de confidentialité" page
+     * To display "politique de confidentialité" page
      * 
      * @Route("/informations/politiqueConfidentialite", name="politiqueConfidentialite")
      */

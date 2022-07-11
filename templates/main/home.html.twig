@@ -291,9 +291,19 @@
 
 {% block javascripts %}
 
-<script src="{{ asset('/js/introA.min.js') }}"></script>
-<script src="{{ asset('/js/intro-home.js') }}"></script>
+
+{# {% if app.user.displayHelp < 1 %} #}
+{% if app.user is null %}
+	{# <script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-home.js') }}"></script>	 #}
+{% elseif app.user.displayHelp < 1 %}
+	<script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-home.js') }}"></script>
+{% else %}
+
+{% endif %}
 
 {% endblock %}
+
 
 {% endblock %}

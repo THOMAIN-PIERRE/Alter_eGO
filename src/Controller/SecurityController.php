@@ -30,8 +30,11 @@ class SecurityController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
 
+            $user->setAvatar("https://i.ibb.co/PcF0y2K/profile-user.png");
+
             $user->setInscriptionDate(new \DateTime());
 
+            $user->setDisplayHelp(0);
             $user->setNavColor("bg-primary");
             $user->setTableColor("bg-primary");
             $user->setBgColor("bg-white");

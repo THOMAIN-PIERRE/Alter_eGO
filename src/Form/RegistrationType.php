@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Spc;
 use App\Entity\Users;
+use App\Entity\Department;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -34,8 +37,19 @@ class RegistrationType extends AbstractType
             ->add('email', EmailType::class)
             ->add('username', TextType::class)
             ->add('password', PasswordType::class)
+            // ->add('spc', TextType::class)
+            ->add('spc', EntityType::class, [
+                'class' => Spc::class,
+                'choice_label' => 'title',
+                'required' => false,
+                ])
+            ->add('department', EntityType::class, [
+                'class' => Department::class,
+                'choice_label' => 'title',
+                'required' => false,
+                ])
             ->add('confirm_password', PasswordType::class)
-            ->add('avatar', UrlType::class)
+            // ->add('avatar', UrlType::class)
             // ->add('department', IntegerType::class)
             // ->add('navColor', ChoiceType::class,[
             //     'choices' => [

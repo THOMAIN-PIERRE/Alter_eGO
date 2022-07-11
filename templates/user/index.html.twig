@@ -29,8 +29,8 @@
 	</div>
 	<div class="mt-5">
 		<a href="{{ path('account_password') }}" class="btn btn-success btn-lg mr-2 mb-2"><i class="fas fa-key"></i> <b>Modifier mon mot de passe</b></a>
-		<a href="{{ path('account_aideContextuelle') }}" class="btn btn-success btn-lg mr-2 mb-2"><i class="fas fa-key"></i> <b>Gérer ALTY (aide contextuelle)</b></a>
-		<a href="{{ path('account_password') }}" class="btn btn-success btn-lg mr-2 mb-2"><i class="fas fa-key"></i> <b>Gérer la configuration de mon compte</b></a>
+		{# <a href="{{ path('account_aideContextuelle') }}" class="btn btn-success btn-lg mr-2 mb-2"><i class="fas fa-key"></i> <b>Gérer ALTY (aide contextuelle)</b></a> #}
+		{# <a href="{{ path('account_password') }}" class="btn btn-success btn-lg mr-2 mb-2"><i class="fas fa-key"></i> <b>Gérer la configuration de mon compte</b></a> #}
 	</div>
 	</div>
 
@@ -48,7 +48,10 @@
 				<tr class="col {{user.tableColor}} text-light">
 					<th class="text-center align-middle">NOM UTILISATEUR</th>
 					<th class="text-center align-middle">EMAIL</th>
-					<th class="text-center align-middle">AVATAR</th>
+					{# <th class="text-center align-middle">AVATAR</th> #}
+					<th class="text-center align-middle">DEPARTEMENT</th>
+					<th class="text-center align-middle">CSP</th>
+					<th class="text-center align-middle">AFFICHAGE AIDE CONTEXTUELLE</th>
 					{# <th class="text-center align-middle">MOT DE PASSE</th> #}
 					{# <th class="text-center align-middle">Date d'inscription</th> #}
 					{# <th class="text-center align-middle">Validation CGU</th> #}
@@ -59,7 +62,11 @@
                 <tr class="col bg-secondary text-light font-weight-bold">
                     <td class="text-center align-middle">{{user.username}}</td>
                     <td class="text-center align-middle">{{user.email}}</td>
-					<th class="text-center align-middle"><img src="{{ app.user.avatar }}" alt="avatar" class="avatar"></th>
+					{# <th class="text-center align-middle"><img src="{{ app.user.avatar }}" alt="avatar" class="avatar"></th> #}
+					<td class="text-center align-middle">{{user.department}}</td>
+					<td class="text-center align-middle">{{user.spc}}</td>
+					<td class="text-center align-middle">{{user.displayHelp}}</td>
+
 					{# {% if is_granted('ROLE_EDITOR') %}
 					<td class="text-center align-middle">{{user.navColor}}</td>
 					<td class="text-center align-middle">{{user.tableColor}}</td>

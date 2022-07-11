@@ -141,11 +141,27 @@
    
  </div>
 
- {% block javascripts %}
+{% block javascripts %}
 
-<script src="{{ asset('/js/introA.min.js') }}"></script>
-<script src="{{ asset('/js/intro-consulter.js') }}"></script>
+{% if app.user is null %}
+	{# <script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-home.js') }}"></script>	 #}
+{% elseif app.user.displayHelp < 1 %}
+	<script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-home.js') }}"></script>
+{% else %}
+
+{% endif %}
+
+
+{# {% if user.displayHelp is null %} #}
+	{# <script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-consulter.js') }}"></script>	 #}
+{# {% else if app.user.displayHelp < 1 %} #}
+	{# <script src="{{ asset('/js/introA.min.js') }}"></script>
+	<script src="{{ asset('/js/intro-consulter.js') }}"></script>	
+{% endif %} #}
 
 {% endblock %}
 
-	{% endblock %}
+{% endblock %}

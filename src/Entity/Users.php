@@ -35,8 +35,9 @@ class Users implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Vous devez renseigner un nom d'utilisateur !")
-     * @Assert\Length(min="3", minMessage="Votre nom d'utilisateur doit faire au minimum 3 caractères")
-     * @Assert\Length(max="30", maxMessage="Votre nom d'utilisateur doit faire au maximum 30 caractères")
+     * @Assert\Length(min="10", minMessage="Votre nom d'utilisateur doit faire au minimum 10 caractères")
+     * @Assert\Length(max="10", maxMessage="Votre nom d'utilisateur doit faire au maximum 10 caractères")
+     * @Assert\Regex(pattern="/^(?=.*[A-Z])(?=.*\d{4})(?=.*[a-z]{2})$/i", message="Votre username doit être composé de 10 caractères sur le schéma suivant : 4 lettres majuscules suivies de 4 chiffres suivis de 2 lettres minuscules.")
      */
     private $username;
 
@@ -45,7 +46,7 @@ class Users implements UserInterface
      * @Assert\NotBlank(message="Vous devez renseigner un mot de passe !")
      * @Assert\Length(min="8", minMessage="Votre mot de passe doit être constitué d'au minimum 8 caractères")
      * @Assert\Length(max="4096", maxMessage="Votre mot de passe doit être constitué au maximum de 4096 caractères")
-     * @Assert\Regex(pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i", message="Votre mot de passe doit comporter au moins une minuscule, une majuscule, un chiffre et un caractère spécial.")
+     * @Assert\Regex(pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i", message="Votre mot de passe doit comporter au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial.")
      * 
      */
     private $password;
@@ -124,6 +125,21 @@ class Users implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adminBgColor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Spc::class, inversedBy="users")
+     */
+    private $spc;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Department::class, inversedBy="users")
+     */
+    private $department;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $displayHelp;
     
     
     //relation de cet utilisateur avec les différents rôles dans la BDD
@@ -452,6 +468,42 @@ class Users implements UserInterface
     public function setAdminBgColor(?string $adminBgColor): self
     {
         $this->adminBgColor = $adminBgColor;
+
+        return $this;
+    }
+
+    public function getSpc(): ?Spc
+    {
+        return $this->spc;
+    }
+
+    public function setSpc(?Spc $spc): self
+    {
+        $this->spc = $spc;
+
+        return $this;
+    }
+
+    public function getDepartment(): ?Department
+    {
+        return $this->department;
+    }
+
+    public function setDepartment(?Department $department): self
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    public function getDisplayHelp(): ?bool
+    {
+        return $this->displayHelp;
+    }
+
+    public function setDisplayHelp(?bool $displayHelp): self
+    {
+        $this->displayHelp = $displayHelp;
 
         return $this;
     }
